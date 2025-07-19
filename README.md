@@ -8,8 +8,6 @@ A fun and interactive Android app built for kids (4–5 years old) where a candl
 
 💨 The flame disappears when the user blows or speaks loudly.
 
-🔁 Automatically relights after a while (optional in future).
-
 🧰 Tech Stack
 Kotlin
 
@@ -26,9 +24,18 @@ Runtime permission handling
 
 🛠️ How to Run
 Clone the project.
-
 Open in Android Studio.
-
 Run on a real device (not all emulators support microphone input).
-
 Grant microphone permission when promp
+
+🚀 Coming Soon
+🎂 "Make a wish" voice before blowing
+
+🔁 Relight the candle after a countdown
+
+🖼️ Multiple candle styles or themes
+
+✨ Celebration animation when flame goes out
+
+👧 For
+This app was made for my niece to enjoy learning and laughing — one magical flame at a time.
