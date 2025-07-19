@@ -29,6 +29,8 @@ import androidx.compose.ui.unit.sp
 import com.app.littlestar.compose.CandleScreen
 import com.app.littlestar.listener.MicVolumeListener
 
+private const val THRESHOLD = 2000
+
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -75,7 +77,7 @@ class MainActivity : ComponentActivity() {
                         Text(text = "Confirm")
                     }
                 } else {
-                    MainScreen()
+                    Candle()
                 }
 
             }
@@ -84,7 +86,7 @@ class MainActivity : ComponentActivity() {
     }
 
     @Composable
-    fun MainScreen() {
+    fun Candle() {
         val current = LocalContext.current
 
         var hasMicPermission by remember {
@@ -109,16 +111,15 @@ class MainActivity : ComponentActivity() {
         if (hasMicPermission) {
             MicrophoneVolumeHandler()
         } else {
-            Text("This app needs microphone permission to work properly.")
+            Text("This app needs microphone permission to work properly")
         }
     }
 
-
     @Composable
     fun MicrophoneVolumeHandler() {
-        var micVolume by remember { mutableStateOf(0) }
-        val threshold = 2000
-        val isBlowing = micVolume > threshold
+        var micVolume by remember { mutableIntStateOf(0) }
+
+        val isBlowing = micVolume > THRESHOLD
 
         val micListener = remember { MicVolumeListener() }
 
